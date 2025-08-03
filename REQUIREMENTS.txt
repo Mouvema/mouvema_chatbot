@@ -4,4 +4,5 @@ onnxruntime
 onnxruntime-tools   
 fastapi    
 pydantic            
-uvicorn[standard] 
+uvicorn[standard]  
+
