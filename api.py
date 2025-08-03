@@ -17,6 +17,7 @@ import json
 import numpy as np
 import nltk
 import os
+import py  # auto-run NLTK data download script
 from nltk.stem import WordNetLemmatizer
 
 # Set NLTK data path to the local directory
