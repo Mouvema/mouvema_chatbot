@@ -1,61 +1,9 @@
-Project Requirements
-====================
-
-1. Python Environment
----------------------
-- Python 3.8 or higher
-- pip (Python package installer)
-- A virtual environment tool (venv, virtualenv, Conda, etc.) recommended
-
-2. Python Packages
-------------------
-Install the following packages in your activated environment:
-
-- torch                # PyTorch (>=1.8)
-- numpy                # Numerical computing
-- nltk                 # Natural Language Toolkit (tokenization, lemmatization)
-- onnx                 # ONNX model format support
-- onnxruntime          # ONNX runtime for inference
-- onnxruntime-tools    # Static quantization tools
-- fastapi             # Web API framework
-- pydantic            # Data validation
-- uvicorn[standard]   # ASGI server for FastAPI
-
-You can install them via:
-
-```powershell
-pip install torch numpy nltk onnx onnxruntime onnxruntime-tools fastapi pydantic uvicorn[standard]
-```
-
-3. NLTK Data
-------------
-The code automatically downloads required NLTK data ("punkt" tokenizer and "wordnet" corpus) on first run. Ensure internet access on initial execution.
-
-4. GUI Dependencies (for `app.py`)
-----------------------------------
-- tkinter (bundled with standard Python distribution)
-
-5. Operating System
--------------------
-- Any OS supported by Python & PyTorch (Windows 10/11, macOS, Linux). Tested on Windows.
-
-6. Other Tools
---------------
-- Git (optional, for version control)
-- PowerShell or Bash terminal to run scripts
-
-7. Example Setup Steps
-----------------------
-```powershell
-cd d:\mouvema_chatbot
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install --upgrade pip
-pip install torch numpy nltk onnx onnxruntime onnxruntime-tools fastapi pydantic uvicorn[standard]
-python train.py
-python quantize.py
-python export_qnnx.py
-python app.py
-```
-
-Now you have the quantized QNNX model and can run the chatbot GUI or integrate into production.
+- torch     
+- numpy         
+- nltk                 
+- onnx                
+- onnxruntime          
+- onnxruntime-tools   
+- fastapi    
+- pydantic            
+- uvicorn[standard] 
