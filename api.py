@@ -16,24 +16,22 @@ import onnxruntime as ort
 import json
 import numpy as np
 import nltk
+import os
 from nltk.stem import WordNetLemmatizer
 
-# Ensure required NLTK data is available
-for pkg in ("punkt", "wordnet"):
-    try:
-        nltk.data.find(f"tokenizers/{pkg}")
-    except LookupError:
-        nltk.download(pkg)
+# Set NLTK data path to the local directory
+nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+nltk.data.path.append(nltk_data_dir)
 
 # Load metadata
-with open('data/chatbot_data.json', 'r') as f:
+with open(os.path.join(os.path.dirname(__file__), 'data', 'chatbot_data.json'), 'r') as f:
     metadata = json.load(f)
 vocabulary = metadata['vocabulary']
 intents = metadata['intents']
 responses_map = metadata['intents_responses']
 
 # Initialize ONNX Runtime session
-session = ort.InferenceSession('models/chatbot_qnnx.onnx')
+session = ort.InferenceSession(os.path.join(os.path.dirname(__file__), 'models', 'chatbot_qnnx.onnx'))
 input_name = session.get_inputs()[0].name
 output_name = session.get_outputs()[0].name
 
