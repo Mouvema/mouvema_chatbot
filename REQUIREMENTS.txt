@@ -1,9 +1,7 @@
-- torch     
-- numpy         
-- nltk                 
-- onnx                
-- onnxruntime          
-- onnxruntime-tools   
-- fastapi    
-- pydantic            
-- uvicorn[standard] 
+nltk                 
+onnx                
+onnxruntime          
+onnxruntime-tools   
+fastapi    
+pydantic            
+uvicorn[standard] 
